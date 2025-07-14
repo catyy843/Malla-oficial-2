@@ -1,0 +1,112 @@
+/* Fuente */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Fondo general */
+body {
+  background: #fef6f9;
+  padding: 20px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+
+/* Contenedor horizontal de la malla */
+.malla-container {
+  display: flex;
+  gap: 16px;
+  padding-bottom: 40px;
+}
+
+/* Cada columna de semestre */
+.semestre {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 8px rgba(150, 50, 100, 0.1);
+  padding: 16px;
+  min-width: 220px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  scroll-snap-align: start;
+}
+
+.semestre h2 {
+  font-size: 18px;
+  color: #d45b82;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+/* Lista de cursos */
+.lista-cursos {
+  list-style: none;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Curso individual */
+.curso {
+  background: #ffe5ec;
+  border: 2px solid #ffc2d1;
+  padding: 12px;
+  border-radius: 12px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 14px;
+  font-weight: 500;
+  color: #6d2b4e;
+  user-select: none;
+}
+
+/* Efectos al pasar el mouse */
+.curso:hover:not(.bloqueado) {
+  transform: scale(1.05);
+  background: #ffd5e5;
+}
+
+/* Curso tachado (completado) */
+.curso.tachado {
+  text-decoration: line-through;
+  background: #d6f5d6;
+  border-color: #9de29d;
+  color: #3b713b;
+}
+
+/* Curso bloqueado (no habilitado aún) */
+.curso.bloqueado {
+  pointer-events: none;
+  opacity: 0.4;
+  cursor: default;
+}
+
+/* Scroll lateral personalizado */
+body::-webkit-scrollbar {
+  height: 12px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #d45b82;
+  border-radius: 10px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #fcdde8;
+}
+
+/* Responsive en móviles */
+@media screen and (max-width: 600px) {
+  .semestre {
+    min-width: 85%;
+  }
+}
